@@ -2,7 +2,7 @@ import boto3
 import json
 
 sqs = boto3.resource('sqs')
-albums = sqs.get_queue_by_name(QueueName='kanclerj-album')
+albums = sqs.get_queue_by_name(QueueName='last-album')
 
 def request_album(data):
   dataAsString = json.dumps(data)
