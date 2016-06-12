@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 	<head>
 		<title>Upload</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,7 @@
 		<!--script src="https://dl.dropboxusercontent.com/u/1412922/jquery.mobile/jquery.mobile-1.4.5.js"></script-->
 		
 		<script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
-		
+
 	</head>
 	<body>
 	
@@ -28,18 +28,16 @@
 		  
 		  <div data-role="main" class="ui-content">
 			<center>
-			<p>awf</p>
-
 				
 				<div class="dropzone" id="dropzoneForm">
 					<div class="dz-message" data-dz-message>
-						<span>Kliknij tutaj lub przeciagnij obrazy do załadowania...</span>
+						<span>Kliknij tutaj lub przeciągnij obrazy do załadowania...</span>
 					</div>
 				</div>	
 				
 				
 				<form class="requestAlbumForm" action="{{url_for('request_album_creation')}}" method="POST">
-					<input name="email" type="text"/>
+					<input type="email" name="email" data-clear-btn="true" placeholder="Tutaj podaj adres e-mail..."/>
 					<button type="submit">Create Album</button>
 				</form>				
 				
@@ -48,7 +46,7 @@
 		  </div>
 
 		  
-		  <div data-role="footer">
+		  <div data-position="fixed" data-role="footer">
 			<h1>© wtf</h1>
 		  </div>
 		</div> 	
