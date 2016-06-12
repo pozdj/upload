@@ -1,40 +1,91 @@
-<html>
- <head>
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
-  <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
-  </head>
- <body>
-  <h1>Here you can create your own album</h1>
-  <div class="dropzone" id="dropzoneForm">
-  </div>
-  <form class="requestAlbumForm" action="{{url_for('request_album_creation')}}" method="POST">
-     <input name="email" type="text"/>
-     <button type="submit">Create Album</button>
-  </form>
-  <script type="text/javascript">
-   var createInput = function(count, path) {
-       	 var input = '<input type="hidden" class="photo" name="photos___number__" value="__value__"/>"'
-         input = input.replace('__number__', count);
-         input = input.replace('__value__',  path);
-         console.log(input)
+﻿<html>
+	<head>
+		<title>Upload</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">	
+		<link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.4.5.css">
+		<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">		
+		<script src="jquery.mobile/jquery-1.11.2.js"></script>		
+		<script src="jquery.mobile/jquery.mobile-1.4.5.js"></script>
+		<script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
 
-       	 return	input;
-       }
-   $(".dropzone").dropzone({
-     maxFiles: 2000,
-     url: "{{ url_for('upload') }}",
-     success: function(file, response){
-       console.log(response);
-       var photosCount = $('.requestAlbumForm input.photo').length;
-       
-       response.photos.forEach(function(photo){
-        input = createInput(photosCount, photo)
-        $('.requestAlbumForm').append($(input));
-       });
-       
-     }
-   });
-  </script>
- </body>
+		
+		
+	</head>
+	<body>
+	
+	
+		<div data-role="page" id="kontakt">
+		  <div data-role="header">
+			<h1>Upload</h1>
+		  </div>
+
+		  
+		  <div data-role="main" class="ui-content">
+			<center>
+			<p>awf</p>
+
+				
+				<div class="dropzone" id="dropzoneForm">
+					<div class="dz-message" data-dz-message>
+						<span>Kliknij tutaj lub przeciagnij obrazy do załadowania...</span>
+					</div>
+				</div>	
+				
+				
+				<form class="requestAlbumForm" action="{{url_for('request_album_creation')}}" method="POST">
+					<input name="email" type="text"/>
+					<button type="submit">Create Album</button>
+				</form>				
+				
+				
+			<center>
+		  </div>
+
+		  
+		  <div data-role="footer">
+			<h1>© wtf</h1>
+		  </div>
+		</div> 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+		
+
+		
+		<script type="text/javascript">
+			var createInput = function(count, path)
+			{
+				var input = '<input type="hidden" class="photo" name="photos___number__" value="__value__"/>"'
+				input = input.replace('__number__', count);
+				input = input.replace('__value__',  path);
+				console.log(input)
+				return	input;
+			}
+			$(".dropzone").dropzone(
+			{
+				maxFiles: 2000,
+				url: "{{ url_for('upload') }}",
+				success: function(file, response)
+				{
+					console.log(response);
+					var photosCount = $('.requestAlbumForm input.photo').length;
+
+					response.photos.forEach(function(photo)
+					{
+						input = createInput(photosCount, photo)
+						$('.requestAlbumForm').append($(input));
+					});
+
+				}
+			});
+		</script>
+	</body>
 </html>
