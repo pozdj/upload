@@ -28,7 +28,7 @@ function CheckForm()
 	else
 	{
 		console.log("email: "+mail);
-
+		document.getElementById("emailForm").submit();
 	}	
 
 }
@@ -54,7 +54,7 @@ function CheckForm()
 				</div>	
 				
 				
-				<form class="requestAlbumForm" action="{{url_for('request_album_creation')}}" method="POST">
+				<form class="requestAlbumForm" id="emailForm" action="{{url_for('request_album_creation')}}" method="POST">
 					<input type="email" name="email" id="emailField" data-clear-btn="true" placeholder="Tutaj podaj adres e-mail..."/>
 					<!--button type="submit" onclick="CheckForm();">Wygeneruj Album</button-->
 										
