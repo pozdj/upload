@@ -108,7 +108,13 @@
 					{
 						input = createInput(photosCount, photo)
 						var a = (JSON.stringify($('#emailForm')));
-						console.log("a"+a);					
+						console.log("a"+a);	
+						
+						var b = (JSON.stringify($('#emailForm input.photo'));
+						console.log("b"+b);							
+
+
+						
 						$('#emailForm').append($(input));
 
 					});
