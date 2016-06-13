@@ -6,7 +6,11 @@
 		<link rel="stylesheet" href="https://s3.eu-central-1.amazonaws.com/167985-last/resources/jquery.mobile/jquery.mobile-1.4.5.css">
 		<!--link rel="stylesheet" href="https://dl.dropboxusercontent.com/u/1412922/jquery.mobile/jquery.mobile-1.4.5.css"-->
 		
-	
+		<link rel="stylesheet" href="https://s3.eu-central-1.amazonaws.com/167985-last/resources/themes/pastelGreenRed.css" />
+		<!--link rel="stylesheet" href="https://dl.dropboxusercontent.com/u/1412922/themes/pastelGreenRed.css" /-->		
+		
+		<link rel="stylesheet" href="https://s3.eu-central-1.amazonaws.com/167985-last/resources/themes/jquery.mobile.icons.min.css" />	
+		<!--link rel="stylesheet" href="https://dl.dropboxusercontent.com/u/1412922/themes/jquery.mobile.icons.min.css" /-->	
 		
 		<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">			
 		<script src="https://s3.eu-central-1.amazonaws.com/167985-last/resources/jquery/jquery-1.11.2.js"></script>
@@ -42,6 +46,7 @@
 			function ClearImages()
 			{
 				Dropzone.forElement("#dropzoneForm").removeAllFiles(true);	
+				added = false;
 			}
 						
 			
@@ -65,11 +70,10 @@
 					</div>	
 					<form class="requestAlbumForm" id="emailForm" action="{{url_for('request_album_creation')}}" method="POST">
 						<input type="email" name="email" id="emailField" data-clear-btn="true" placeholder="Tutaj podaj adres e-mail..."/>
-						<!--button type="submit" onclick="CheckForm();">Wygeneruj Album</button-->
 											
 					</form>				
-					<a href="#ErrorPopup" data-transition="fade" data-rel="popup" class="ui-btn ui-btn-inline ui-btn-icon-left ui-icon-check" onclick="CheckForm();">Wygeneruj Album</a>
-					<button class="ui-btn ui-btn-inline ui-btn-icon-left ui-icon-delete" type="submit" onclick="ClearImages();">Usuń Obrazy</button>
+					<a href="#ErrorPopup" data-transition="fade" data-rel="popup" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-shadow ui-btn-icon-left ui-icon-check" onclick="CheckForm();">Wygeneruj Album</a>
+					<button class="ui-btn ui-btn-c ui-btn-inline ui-corner-all ui-shadow ui-btn-icon-left ui-icon-delete" type="submit" onclick="ClearImages();">Usuń Obrazy</button>
 				
 				<center>
 			</div>
