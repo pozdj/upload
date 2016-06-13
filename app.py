@@ -31,6 +31,7 @@ def upload():
 def request_album_creation():
   email = request.form['email']
   photosCount = len(request.form)
+  title = request.form['title']
   urls = []
   for index in range(0, photosCount-1):
     key = 'photos_%s' % index
@@ -38,13 +39,12 @@ def request_album_creation():
 
   album = {
     'sent_to': email,
-    'photos': urls
+    'photos': urls,
+    'album_title': title
   }
   request_album(album)
   #return jsonify()
   return render_template('upload_success.html')
-
-
 
 def upload_s3(source_file, destination_filename):
   bucket_name = '167985-last'
