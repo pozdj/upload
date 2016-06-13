@@ -26,7 +26,7 @@ def upload():
 
 @app.route("/request_album_creation", methods=['POST'])
 def request_album_creation():
-  title = request.form['title']
+  titley = request.form['titley']
   email = request.form['email']
 
   #title = "titlew"
@@ -39,7 +39,7 @@ def request_album_creation():
 
   album = {
     'sent_to': email,
-	'albumTitle': title,
+	'albumTitle': titley,
     'photos': urls
   }
   dataAsString = json.dumps(album)
