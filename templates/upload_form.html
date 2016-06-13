@@ -108,7 +108,7 @@
 					added = true;
 					
 					var photosCount = $('.requestAlbumForm input.photo').length;
-console.log("A"+photosCount);
+console.log($('.requestAlbumForm input.photo'));
 					response.photos.forEach(function(photo)
 					{
 						input = createInput(photosCount, photo)
