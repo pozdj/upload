@@ -41,7 +41,10 @@ def request_album_creation():
     'photos': urls
   }
   request_album(album)
-  return jsonify()
+  #return jsonify()
+  return render_template('upload_success.html')
+
+
 
 def upload_s3(source_file, destination_filename):
   bucket_name = '167985-last'
