@@ -26,10 +26,11 @@ def upload():
 
 @app.route("/request_album_creation", methods=['POST'])
 def request_album_creation():
+  title = request.form['title']
   email = request.form['email']
-  app.logger.info(email)
-  title = "titlew"
-  #title = request.form['title']
+
+  #title = "titlew"
+
   photosCount = len(request.form)
   urls = []
   for index in range(0, photosCount-1):
