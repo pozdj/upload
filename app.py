@@ -24,7 +24,7 @@ def upload():
     upload_s3(f, destination_name)
   return jsonify(album)
 
-@app.route("/request-album", methods=['POST'])
+@app.route("/request_album_creation", methods=['POST'])
 def request_album_creation():
   email = request.form['email']
   app.logger.info(email)
