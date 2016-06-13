@@ -28,8 +28,8 @@ def upload():
 def request_album_creation():
   email = request.form['email']
   app.logger.info(email)
-  title = "titlew"
-  #title = request.form['title']
+  #title = "titlew"
+  title = request.form['title']
   photosCount = len(request.form)
   urls = []
   for index in range(0, photosCount-1):
