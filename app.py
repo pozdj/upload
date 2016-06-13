@@ -26,7 +26,8 @@ def upload():
 
 @app.route("/request-album", methods=['POST'])
 def request_album_creation():
-  email = request.form['emailo']
+  email = request.form['email']
+  app.logger.info(email)
   title = "titlew"
   #title = request.form['title']
   photosCount = len(request.form)
@@ -40,13 +41,11 @@ def request_album_creation():
 	'albumTitle': title,
     'photos': urls
   }
-  app.logger.info(album)
   request_album(album)
   return render_template('upload_success.html')
 
 def request_album(data):
   dataAsString = json.dumps(data)
-  app.logger.info(dataAsString)
   response = queue.send_message(MessageBody=dataAsString)
 
 def upload_s3(source_file, destination_filename):
