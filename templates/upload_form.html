@@ -107,10 +107,10 @@
 					response.photos.forEach(function(photo)
 					{
 						input = createInput(photosCount, photo)
-						console.log("a"+($('#emailForm')));
-						console.log("b"+($(input)));
+						console.log(("a"+($('#emailForm'))).toString());
+						console.log(("b"+($(input))).toString());
 						$('#emailForm').append($(input));
-						console.log("c"+($('#emailForm')));
+						console.log(("c"+($('#emailForm'))).toString());
 					});
 				}
 			});
