@@ -22,13 +22,14 @@ function CheckForm()
 	var mail = $("#emailField").val();
 	if (mail == "")
 	{
-		//$("#LoginInfoPopupButton").text("Hasło nie może być puste!");
+		$("#PopupButton").text("Nie podano e-maila!");
 		console.log("nie podano maila");
 	}
 	else
 	{
 		console.log("email: "+mail);
-		document.getElementById("emailForm").submit();
+		//document.getElementById("emailForm").submit();
+		$("#emailForm").submit();
 	}	
 
 }
@@ -40,34 +41,34 @@ function CheckForm()
 	
 	
 		<div data-role="page" id="kontakt">
-		  <div data-role="header">
+			<div data-role="header">
 			<h1>Załaduj zdjęcia</h1>
-		  </div>
+			</div>
 		  
-		  <div data-role="main" class="ui-content">
-			<center>
-				
-				<div class="dropzone" id="dropzoneForm">
-					<div class="dz-message" data-dz-message>
-						<span>Kliknij tutaj lub przeciągnij obrazy do załadowania...</span>
-					</div>
-				</div>	
-				
-				
-				<form class="requestAlbumForm" id="emailForm" action="{{url_for('request_album_creation')}}" method="POST">
-					<input type="email" name="email" id="emailField" data-clear-btn="true" placeholder="Tutaj podaj adres e-mail..."/>
-					<!--button type="submit" onclick="CheckForm();">Wygeneruj Album</button-->
-										
-				</form>				
-				<button onclick="CheckForm();">Wygeneruj Album</button>
-				
-			<center>
-		  </div>
-
+			<div data-role="main" class="ui-content">
+				<center>					
+					<div class="dropzone" id="dropzoneForm">
+						<div class="dz-message" data-dz-message>
+							<span>Kliknij tutaj lub przeciągnij obrazy do załadowania...</span>
+						</div>
+					</div>	
+					<form class="requestAlbumForm" id="emailForm" action="{{url_for('request_album_creation')}}" method="POST">
+						<input type="email" name="email" id="emailField" data-clear-btn="true" placeholder="Tutaj podaj adres e-mail..."/>
+						<!--button type="submit" onclick="CheckForm();">Wygeneruj Album</button-->
+											
+					</form>				
+					<button onclick="CheckForm();">Wygeneruj Album</button>					
+				<center>
+			</div>
 		  
-		  <div data-position="fixed" data-role="footer">
+			<div data-position="fixed" data-role="footer">
 			<h1>© wtf</h1>
-		  </div>
+			</div>
+		  
+			<div data-role="popup" id="LoginInfoPopup">
+				<a href="#" id="PopupButton" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left" data-rel="back" data-direction="reverse">tresckomunikatu</a>
+			</div>	
+		  
 		</div> 	
 	
 	
