@@ -103,11 +103,11 @@
 				{
 					added = true;
 					
-					var photosCount = $('.requestAlbumForm input.photo').length;
+					var photosCount = $('#emailForm input.photo').length;
 					response.photos.forEach(function(photo)
 					{
 						input = createInput(photosCount, photo)
-						$('.requestAlbumForm').append($(input));
+						$('#emailForm').append($(input));
 					});
 				}
 			});
