@@ -70,7 +70,7 @@
 					</div>	
 					<form id="emailForm" action="/request_album_creation" method="POST">
 						<input type="email" name="email" id="emailField" data-clear-btn="true" placeholder="Tutaj podaj adres e-mail..."/>
-						<input type="text" name="title" data-clear-btn="true" placeholder="Tutaj wpisz tytuł albumu..."/>
+						<input type="text" name="titley" data-clear-btn="true" placeholder="Tutaj wpisz tytuł albumu..."/>
 					</form>					
 				
 					<a href="#ErrorPopup" data-transition="fade" data-rel="popup" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-shadow ui-btn-icon-left ui-icon-check" onclick="CheckForm();">Wygeneruj Album</a>
@@ -108,12 +108,9 @@
 					{
 						input = createInput(photosCount, photo)
 						var a = (JSON.stringify($('#emailForm')));
-						console.log("a"+a);
-						var b = (JSON.stringify($(input)));
-						console.log("b"+b);						
+						console.log("a"+a);					
 						$('#emailForm').append($(input));
-						var c = (JSON.stringify($('#emailForm')));
-						console.log("c"+c);	
+
 					});
 				}
 			});
