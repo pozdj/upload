@@ -42,7 +42,7 @@ def request_album_creation():
 
 def request_album(data):
   dataAsString = json.dumps(data)
-  print(dataAsString, file=sys.stderr)
+  app.logger.info(dataAsString)
   response = queue.send_message(MessageBody=dataAsString)
 
 def upload_s3(source_file, destination_filename):
