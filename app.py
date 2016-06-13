@@ -38,6 +38,7 @@ def request_album_creation():
 	'albumTitle': title,
     'photos': urls
   }
+  app.logger.info(album)
   request_album(album)
   return render_template('upload_success.html')
 
