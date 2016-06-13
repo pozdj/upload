@@ -47,6 +47,7 @@
 			{
 				Dropzone.forElement("#dropzoneForm").removeAllFiles(true);	
 				added = false;
+				console.log({{url_for('request_album_creation')}});
 			}
 						
 			
@@ -68,11 +69,15 @@
 							<span>Kliknij tutaj lub przeciągnij obrazy do załadowania...</span>
 						</div>
 					</div>	
-					<form class="requestAlbumForm" id="emailForm" name="emailo" action="{{url_for('request_album_creation')}}" method="POST">
+					<form class="requestAlbumForm" id="emailForm" action="{{url_for('request_album_creation')}}" method="POST">
 						<input type="email" name="email" id="emailField" data-clear-btn="true" placeholder="Tutaj podaj adres e-mail..."/>
 					</form>	
 					
-					<input type="text" name="title" id="titleField" data-clear-btn="true" placeholder="Tutaj wpisz tytuł albumu..."/>
+		
+						<input type="text" name="title" id="titleField" data-clear-btn="true" placeholder="Tutaj wpisz tytuł albumu..."/>
+
+					
+					
 										
 					
 					<a href="#ErrorPopup" data-transition="fade" data-rel="popup" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-shadow ui-btn-icon-left ui-icon-check" onclick="CheckForm();">Wygeneruj Album</a>
@@ -98,8 +103,7 @@
 			}
 			$(".dropzone").dropzone(
 			{
-				maxFiles: 2000,
-				createImageThumbnails: true,				
+				maxFiles: 2000,			
 				url: "{{ url_for('upload') }}",
 				
 				success: function(file, response)
@@ -112,7 +116,6 @@
 						input = createInput(photosCount, photo)
 						$('.requestAlbumForm').append($(input));
 					});
-
 				}
 			});
 		</script>
