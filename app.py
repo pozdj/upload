@@ -41,12 +41,9 @@ def request_album_creation():
 	'albumTitle': title,
     'photos': urls
   }
-  request_album(album)
-  return render_template('upload_success.html')
-
-def request_album(data):
-  dataAsString = json.dumps(data)
+  dataAsString = json.dumps(album)
   response = queue.send_message(MessageBody=dataAsString)
+  return render_template('upload_success.html')
 
 def upload_s3(source_file, destination_filename):
   bucket_name = '167985-last'
