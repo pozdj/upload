@@ -35,7 +35,7 @@ def request_album_creation():
 
   album = {
     'sent_to': email,
-	'albumTitle': title,
+	'albumTitle': "title",
     'photos': urls
   }
   app.logger.info(album)
