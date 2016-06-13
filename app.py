@@ -1,5 +1,4 @@
 import os, boto3, json
-#from album_queue import request_album
 from uuid import uuid4
 from flask import Flask, render_template, jsonify, request, send_from_directory
 app = Flask(__name__)
@@ -29,7 +28,6 @@ def upload():
 def request_album_creation():
   email = request.form['email']
   photosCount = len(request.form)
-  #title = request.form['title']
   urls = []
   for index in range(0, photosCount-1):
     key = 'photos_%s' % index
@@ -38,12 +36,9 @@ def request_album_creation():
   album = {
     'sent_to': email,
     'photos': urls
-    #'album_title': title
   }
   request_album(album)
-  #return jsonify()
   return render_template('upload_success.html')
-
 
 def request_album(data):
   dataAsString = json.dumps(data)
