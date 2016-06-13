@@ -5,12 +5,8 @@ from flask import Flask, render_template, jsonify, request, send_from_directory
 app = Flask(__name__)
 
 sqs = boto3.resource('sqs')
-albums = sqs.get_queue_by_name(QueueName='last-album')
+queue = sqs.get_queue_by_name(QueueName='last-album')
 bucket_address = 'https://s3.eu-central-1.amazonaws.com/167985-last'
-
-@app.route("/hello")
-def hello():
-    return "Hello World!"
 
 @app.route("/")
 def index():
@@ -51,7 +47,8 @@ def request_album_creation():
 
 def request_album(data):
   dataAsString = json.dumps(data)
-  response = albums.send_message(MessageBody=dataAsString)
+  str(dataAsString)
+  response = queue.send_message(MessageBody=dataAsString)
 
 def upload_s3(source_file, destination_filename):
   bucket_name = '167985-last'
