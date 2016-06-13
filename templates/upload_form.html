@@ -39,7 +39,11 @@
 					$("#emailForm").submit();
 				}	
 			}
-			
+			function ClearImages()
+			{
+				Dropzone.forElement("#dropzoneForm").removeAllFiles(true);	
+			}
+						
 			
 
 		</script>		
@@ -64,7 +68,9 @@
 						<!--button type="submit" onclick="CheckForm();">Wygeneruj Album</button-->
 											
 					</form>				
-					<a href="#ErrorPopup" data-transition="slidefade" data-rel="popup" class="ui-btn ui-corner-all ui-shadow" onclick="CheckForm();">Wygeneruj Album</a>	
+					<a href="#ErrorPopup" data-transition="slidefade" data-rel="popup" class="ui-btn ui-corner-all ui-shadow" onclick="CheckForm();">Wygeneruj Album</a>
+					<button type="submit" onclick="ClearImages();">Wyczyść</button>
+				
 				<center>
 			</div>
 			
