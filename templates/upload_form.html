@@ -19,8 +19,8 @@
 		
 function CheckForm()
 {
-	//var mail = $("#emailField").val();
-	if ($("#emailField").val() == "")
+	var mail = $("#emailField").val();
+	if (mail == "")
 	{
 		$("#PopupButton").text("Nie podano e-maila!");
 		console.log("nie podano maila");
