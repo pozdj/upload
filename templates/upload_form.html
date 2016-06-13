@@ -22,7 +22,7 @@ function CheckForm()
 	var mail = $("#emailField").val();
 	if (mail == "")
 	{
-		$("#PopupButton").text("Nie podano e-maila!");
+		$("#ErrorPopupButton").text("Nie podano e-maila!");
 		console.log("nie podano maila");
 	}
 	else
@@ -57,7 +57,8 @@ function CheckForm()
 						<!--button type="submit" onclick="CheckForm();">Wygeneruj Album</button-->
 											
 					</form>				
-					<button onclick="CheckForm();">Wygeneruj Album</button>					
+					<button onclick="CheckForm();">Wygeneruj Album</button>	
+					<a href="#ErrorPopup" data-transition="fade" data-rel="popup" class="ui-btn ui-corner-all ui-shadow" onclick="CheckForm();">Wygeneruj Album</a>	
 				<center>
 			</div>
 		  
@@ -65,8 +66,8 @@ function CheckForm()
 			<h1>© wtf</h1>
 			</div>
 		  
-			<div data-role="popup" id="LoginInfoPopup">
-				<a href="#" id="PopupButton" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left" data-rel="back" data-direction="reverse">tresckomunikatu</a>
+			<div data-role="popup" id="ErrorPopup">
+				<a href="#" id="ErrorPopupButton" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left" data-rel="back" data-direction="reverse">tresckomunikatu</a>
 			</div>	
 		  
 		</div> 	
