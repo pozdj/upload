@@ -70,8 +70,10 @@
 					</div>	
 					<form class="requestAlbumForm" id="emailForm" action="{{url_for('request_album_creation')}}" method="POST">
 						<input type="email" name="email" id="emailField" data-clear-btn="true" placeholder="Tutaj podaj adres e-mail..."/>
-						<input type="text" name="title" id="titleField" data-clear-btn="true" placeholder="Tutaj wpisz tytuł albumu..."/>											
-					</form>				
+					</form>	
+
+					<input type="text" name="title" id="titleField" data-clear-btn="true" placeholder="Tutaj wpisz tytuł albumu..."/>	
+					
 					<a href="#ErrorPopup" data-transition="fade" data-rel="popup" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-shadow ui-btn-icon-left ui-icon-check" onclick="CheckForm();">Wygeneruj Album</a>
 					<button class="ui-btn ui-btn-c ui-btn-inline ui-corner-all ui-shadow ui-btn-icon-left ui-icon-delete" type="submit" onclick="ClearImages();">Usuń Obrazy</button>
 				
