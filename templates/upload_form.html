@@ -6,6 +6,9 @@
 		<link rel="stylesheet" href="https://s3.eu-central-1.amazonaws.com/167985-last/resources/jquery.mobile/jquery.mobile-1.4.5.css">
 		<!--link rel="stylesheet" href="https://dl.dropboxusercontent.com/u/1412922/jquery.mobile/jquery.mobile-1.4.5.css"-->
 		
+		<!--link rel="stylesheet" href="themes/NightDay.css"/-->
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />			
+		
 		<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">	
 		
 		<script src="https://s3.eu-central-1.amazonaws.com/167985-last/resources/jquery/jquery-1.11.2.js"></script>
@@ -47,7 +50,7 @@ function CheckForm()
 		  
 			<div data-role="main" class="ui-content">
 				<center>					
-					<div class="dropzone" id="dropzoneForm">
+					<div class="dropzone ui-btn ui-btn-a  ui-shadow ui-corner-all"  id="dropzoneForm" >
 						<div class="dz-message" data-dz-message>
 							<span>Kliknij tutaj lub przeciągnij obrazy do załadowania...</span>
 						</div>
@@ -57,7 +60,6 @@ function CheckForm()
 						<!--button type="submit" onclick="CheckForm();">Wygeneruj Album</button-->
 											
 					</form>				
-					<button onclick="CheckForm();">Wygeneruj Album</button>	
 					<a href="#ErrorPopup" data-transition="fade" data-rel="popup" class="ui-btn ui-corner-all ui-shadow" onclick="CheckForm();">Wygeneruj Album</a>	
 				<center>
 			</div>
@@ -67,7 +69,7 @@ function CheckForm()
 			</div>
 		  
 			<div data-role="popup" id="ErrorPopup">
-				<a href="#" id="ErrorPopupButton" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left" data-rel="back" data-direction="reverse">tresckomunikatu</a>
+				<a href="#" id="ErrorPopupButton" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-alert ui-btn-icon-left" data-rel="back" data-direction="reverse">tresckomunikatu</a>
 			</div>	
 		  
 		</div> 	
@@ -90,6 +92,7 @@ function CheckForm()
 			$(".dropzone").dropzone(
 			{
 				maxFiles: 2000,
+				createImageThumbnails: true,				
 				url: "{{ url_for('upload') }}",
 				success: function(file, response)
 				{
@@ -98,6 +101,7 @@ function CheckForm()
 
 					response.photos.forEach(function(photo)
 					{
+						console.log("Aa");
 						input = createInput(photosCount, photo)
 						$('.requestAlbumForm').append($(input));
 					});
