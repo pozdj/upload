@@ -28,7 +28,7 @@ def upload():
 def request_album_creation():
   #title = request.form['title']
   email = request.form['email']
-  title = "przykładowy tytuł"
+  title = "Tytul albumu"
   photosCount = len(request.form)
   urls = []
   for index in range(0, photosCount-1):
