@@ -19,11 +19,16 @@
 		
 		<script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
 		<script type="text/javascript" charset="utf-8">
-		
+var added = -1;		
 function CheckForm()
 {
 	var mail = $("#emailField").val();
-	if (mail == "")
+	if (added < 0)
+	{
+		$("#ErrorPopupButton").text("Nie załadowano żadnego zdjęcia!");
+		console.log("nie załadowano żadnego zdjęcia");	
+	}	
+	else if (mail == "")
 	{
 		$("#ErrorPopupButton").text("Nie podano e-maila!");
 		console.log("nie podano maila");
@@ -94,13 +99,11 @@ function CheckForm()
 				maxFiles: 2000,
 				createImageThumbnails: true,				
 				url: "{{ url_for('upload') }}",
-				added: function()
-				{
-				console.log("added");
-				},
+				
 				success: function(file, response)
 				{
-					console.log(response+"response");
+					added = 1;
+					console.log(response);
 					var photosCount = $('.requestAlbumForm input.photo').length;
 
 					response.photos.forEach(function(photo)
