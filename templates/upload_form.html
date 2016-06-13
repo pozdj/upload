@@ -94,7 +94,7 @@ function CheckForm()
 				maxFiles: 2000,
 				createImageThumbnails: true,				
 				url: "{{ url_for('upload') }}",
-				added:
+				added: function()
 				{
 				console.log("added");
 				},
