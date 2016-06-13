@@ -68,7 +68,7 @@
 							<span>Kliknij tutaj lub przeciągnij obrazy do załadowania...</span>
 						</div>
 					</div>	
-					<form class="requestAlbumForm" id="emailForm" action="/request_album_creation" method="POST">
+					<form id="emailForm" action="/request_album_creation" method="POST">
 						<input type="email" name="email" id="emailField" data-clear-btn="true" placeholder="Tutaj podaj adres e-mail..."/>
 						<input type="text" name="title" data-clear-btn="true" placeholder="Tutaj wpisz tytuł albumu..."/>
 					</form>					
@@ -107,7 +107,10 @@
 					response.photos.forEach(function(photo)
 					{
 						input = createInput(photosCount, photo)
+						console.log("a"+($('#emailForm')));
+						console.log("b"+($(input)));
 						$('#emailForm').append($(input));
+						console.log("c"+($('#emailForm')));
 					});
 				}
 			});
