@@ -1,6 +1,6 @@
 ﻿<html>
 	<head>
-		<title>Upload</title>
+		<title>Załaduj zdjęcia</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<link rel="stylesheet" href="https://s3.eu-central-1.amazonaws.com/167985-last/resources/jquery.mobile/jquery.mobile-1.4.5.css">
@@ -15,6 +15,26 @@
 		<!--script src="https://dl.dropboxusercontent.com/u/1412922/jquery.mobile/jquery.mobile-1.4.5.js"></script-->
 		
 		<script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+		<script type="text/javascript" charset="utf-8">
+		
+function CheckForm()
+{
+	var mail = $("#emailField").val();
+	if (mail == "")
+	{
+		//$("#LoginInfoPopupButton").text("Hasło nie może być puste!");
+		console.log(mail);
+		console.log("a");
+	}
+	else
+	{
+		console.log(mail);
+		console.log("b");
+	}	
+
+}
+
+		</script>		
 
 	</head>
 	<body>
@@ -22,9 +42,8 @@
 	
 		<div data-role="page" id="kontakt">
 		  <div data-role="header">
-			<h1>Upload</h1>
+			<h1>Załaduj zdjęcia</h1>
 		  </div>
-
 		  
 		  <div data-role="main" class="ui-content">
 			<center>
@@ -37,8 +56,8 @@
 				
 				
 				<form class="requestAlbumForm" action="{{url_for('request_album_creation')}}" method="POST">
-					<input type="email" name="email" data-clear-btn="true" placeholder="Tutaj podaj adres e-mail..."/>
-					<button type="submit">Create Album</button>
+					<input type="email" name="email" id="emailField" data-clear-btn="true" placeholder="Tutaj podaj adres e-mail..."/>
+					<button type="submit" onclick="CheckForm();">Wygeneruj Album</button>
 				</form>				
 				
 				
@@ -54,13 +73,6 @@
 	
 	
 	
-	
-	
-	
-	
-	
-
-
 		
 
 		
