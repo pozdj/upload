@@ -6,11 +6,10 @@
 		<link rel="stylesheet" href="https://s3.eu-central-1.amazonaws.com/167985-last/resources/jquery.mobile/jquery.mobile-1.4.5.css">
 		<!--link rel="stylesheet" href="https://dl.dropboxusercontent.com/u/1412922/jquery.mobile/jquery.mobile-1.4.5.css"-->
 		
-		<!--link rel="stylesheet" href="themes/NightDay.css"/-->
+		<link rel="stylesheet" href="themes/NightDay.css"/>
 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />			
 		
-		<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">	
-		
+		<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">			
 		<script src="https://s3.eu-central-1.amazonaws.com/167985-last/resources/jquery/jquery-1.11.2.js"></script>
 		<!--script src="https://dl.dropboxusercontent.com/u/1412922/jquery.mobile/jquery-1.11.2.js"></script-->   
 				
@@ -19,34 +18,33 @@
 		
 		<script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
 		<script type="text/javascript" charset="utf-8">
-var added = -1;		
-function CheckForm()
-{
-	var mail = $("#emailField").val();
-	if (added < 0)
-	{
-		$("#ErrorPopupButton").text("Nie załadowano żadnego zdjęcia!");
-		console.log("nie załadowano żadnego zdjęcia");	
-	}	
-	else if (mail == "")
-	{
-		$("#ErrorPopupButton").text("Nie podano e-maila!");
-		console.log("nie podano maila");
-	}
-	else
-	{
-		console.log("email: "+mail);
-		//document.getElementById("emailForm").submit();
-		$("#emailForm").submit();
-	}	
-
-}
+		
+			var added = false;		
+			function CheckForm()
+			{
+				var mail = $("#emailField").val();
+				if (added == false)
+				{
+					$("#ErrorPopupButton").text("Nie załadowano żadnego zdjęcia!");
+					console.log("nie załadowano żadnego zdjęcia");	
+				}	
+				else if (mail == "")
+				{
+					$("#ErrorPopupButton").text("Nie podano e-maila!");
+					console.log("nie podano maila");
+				}
+				else
+				{
+					console.log("email: "+mail);
+					//document.getElementById("emailForm").submit();
+					$("#emailForm").submit();
+				}	
+			}
 
 		</script>		
 
 	</head>
-	<body>
-	
+	<body>	
 	
 		<div data-role="page" id="kontakt">
 			<div data-role="header">
@@ -75,16 +73,9 @@ function CheckForm()
 		  
 			<div data-role="popup" id="ErrorPopup">
 				<a href="#" id="ErrorPopupButton" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-alert ui-btn-icon-left" data-rel="back" data-direction="reverse">tresckomunikatu</a>
-			</div>	
-		  
+			</div>			  
 		</div> 	
-	
-	
-	
-	
-		
-
-		
+			
 		<script type="text/javascript">
 			var createInput = function(count, path)
 			{
@@ -102,7 +93,7 @@ function CheckForm()
 				
 				success: function(file, response)
 				{
-					added = 1;
+					added = true;
 					console.log(response);
 					var photosCount = $('.requestAlbumForm input.photo').length;
 
