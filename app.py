@@ -29,9 +29,9 @@ def request_album_creation():
   combinedField = request.form['combinedField']
   print('received string: '+combinedField)
   receivedFields = combinedField.split("##%%$$")
-  print('separated strings: '+receivedFields[0]+' yy '+receivedFields[1])  
-  title = "Tytul albumu"
-  
+  print('email: '+receivedFields[0]) 
+  print('title: '+receivedFields[1])   
+
   
   photosCount = len(request.form)
   urls = []
@@ -40,8 +40,8 @@ def request_album_creation():
     urls.append(request.form[key])
 
   album = {
-    'sent_to': combinedField,
-	'albumTitle': title,
+    'sent_to': receivedFields[0],
+	'albumTitle': receivedFields[1],
     'photos': urls
   }
   dataAsString = json.dumps(album)
