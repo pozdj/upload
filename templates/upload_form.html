@@ -39,7 +39,7 @@
 				else
 				{
 					console.log("email: "+mail);
-					//document.getElementById("emailForm").submit();
+					updateCombinedField();
 					$("#emailForm").submit();
 				}	
 			}
@@ -48,7 +48,14 @@
 				Dropzone.forElement("#dropzoneForm").removeAllFiles(true);	
 				added = false;
 			}
-						
+			
+			function updateCombinedField
+			{
+				var eml = $("#emailField").val();
+				var ttl = $("#titleField").val();
+				console.log(eml+ttl);
+			}
+
 			
 
 		</script>		
@@ -69,9 +76,11 @@
 						</div>
 					</div>	
 					<form id="emailForm" action="/request_album_creation" method="POST">
-						<input type="email" name="email" id="emailField" data-clear-btn="true" placeholder="Tutaj podaj adres e-mail..."/>
-						<!--input type="text" name="title" data-clear-btn="true" placeholder="Tutaj wpisz tytuł albumu..."/-->
-					</form>					
+						<input type="text" name="combinedField" data-clear-btn="true" placeholder="Tutaj podaj adres e-mail..."/>
+					</form>	
+					
+					<input type="email" id="emailField" data-clear-btn="true" placeholder="Tutaj podaj adres e-mail..."/>
+					<input type="text" id="titleField" data-clear-btn="true" placeholder="Tutaj wpisz tytuł albumu..."/>					
 				
 					<a href="#ErrorPopup" data-transition="fade" data-rel="popup" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-shadow ui-btn-icon-left ui-icon-check" onclick="CheckForm();">Wygeneruj Album</a>
 					<button class="ui-btn ui-btn-c ui-btn-inline ui-corner-all ui-shadow ui-btn-icon-left ui-icon-delete" type="submit" onclick="ClearImages();">Usuń Obrazy</button>
