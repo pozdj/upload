@@ -23,7 +23,7 @@
 		<script type="text/javascript" charset="utf-8">
 		
 			var added = false;		
-			function CheckForm()
+			function CheckAndSubmitForm()
 			{
 				var mail = $("#combinedField").val();
 				if (added == false)
@@ -54,6 +54,7 @@
 				var eml = $("#emailField").val();
 				var ttl = $("#titleField").val();
 				console.log(eml+ttl);
+				$("#combinedField").val(($("#emailField").val())+"##%%$$"+($("#titleField").val()))
 			}
 
 			
@@ -82,7 +83,7 @@
 					<input type="email" id="emailField" data-clear-btn="true" placeholder="Tutaj podaj adres e-mail..."/>
 					<input type="text" id="titleField" data-clear-btn="true" placeholder="Tutaj wpisz tytuł albumu..."/>					
 				
-					<a href="#ErrorPopup" data-transition="fade" data-rel="popup" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-shadow ui-btn-icon-left ui-icon-check" onclick="CheckForm();">Wygeneruj Album</a>
+					<a href="#ErrorPopup" data-transition="fade" data-rel="popup" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-shadow ui-btn-icon-left ui-icon-check" onclick="CheckAndSubmitForm();">Wygeneruj Album</a>
 					<button class="ui-btn ui-btn-c ui-btn-inline ui-corner-all ui-shadow ui-btn-icon-left ui-icon-delete" type="submit" onclick="ClearImages();">Usuń Obrazy</button>
 				
 				<center>
