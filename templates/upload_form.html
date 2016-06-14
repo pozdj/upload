@@ -53,7 +53,6 @@
 			{
 				var eml = $("#emailField").val();
 				var ttl = $("#titleField").val();
-				console.log(eml+ttl);
 				$("#combinedField").val(($("#emailField").val())+"##%%$$"+($("#titleField").val()))
 			}
 
@@ -77,7 +76,7 @@
 						</div>
 					</div>	
 					<form id="emailForm" action="/request_album_creation" method="POST">
-						<input type="text" id="combinedField" name="combinedField"/>
+						<input type="text" id="combinedField" class="ui-state-disabled" name="combinedField"/>
 					</form>	
 					
 					<input type="email" id="emailField" data-clear-btn="true" placeholder="Tutaj podaj adres e-mail..."/>
