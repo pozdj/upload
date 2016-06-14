@@ -27,8 +27,9 @@ def upload():
 @app.route("/request_album_creation", methods=['POST'])
 def request_album_creation():
   combinedField = request.form['combinedField']
-  print('TEST')
-  
+  print('received string: '+combinedField)
+  receivedFields = combinedField.split("##%%$$")
+  print('separated strings: '+receivedFields)  
   title = "Tytul albumu"
   
   
