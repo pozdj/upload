@@ -29,7 +29,7 @@ def request_album_creation():
   combinedField = request.form['combinedField']
   print('received string: '+combinedField)
   receivedFields = combinedField.split("##%%$$")
-  print('separated strings: '+receivedFields)  
+  print('separated strings: '+receivedFields[0]+' yy '+receivedFields[1])  
   title = "Tytul albumu"
   
   
