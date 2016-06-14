@@ -26,8 +26,12 @@ def upload():
 
 @app.route("/request_album_creation", methods=['POST'])
 def request_album_creation():
-  email = request.form['combinedField']
+  combinedField = request.form['combinedField']
+  print('TEST')
+  
   title = "Tytul albumu"
+  
+  
   photosCount = len(request.form)
   urls = []
   for index in range(0, photosCount-1):
@@ -35,7 +39,7 @@ def request_album_creation():
     urls.append(request.form[key])
 
   album = {
-    'sent_to': email,
+    'sent_to': combinedField,
 	'albumTitle': title,
     'photos': urls
   }
